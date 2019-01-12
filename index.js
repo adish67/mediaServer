@@ -1,8 +1,16 @@
+//Requiring packages
+const express = require('express'),
+    mongoose = require('mongoose'),
+    bodyParser = require('body-parser'),
+    logger = require('morgan'),
+    passport = require("passport"),
+    LocalStrategy = require("passport-local"),
+    methodOverride = require("method-override");
 
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const logger = require('morgan');
+//Requiring routes 
+const campgroundRoutes  = require("./routes/campgrounds"),
+    commentsRoutes    = require("./routes/comments"),
+    indexRoutes       = require("./routes/index");
 
 const app =  express();
 const configDb =  require('./config/constants.json');
